@@ -22,6 +22,9 @@
 		86AB84F3177B6DE500CEC858 /* BBUSoundListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84F2177B6DE500CEC858 /* BBUSoundListViewController.m */; };
 		86AB84F6177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84F5177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m */; };
 		86AB84F9177B740200CEC858 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84F8177B740200CEC858 /* UIView+Geometry.m */; };
+		86AB84FC177B7AAD00CEC858 /* BBUTrackSearchDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84FB177B7A9D00CEC858 /* BBUTrackSearchDataSource.m */; };
+		86AB84FF177B7FB000CEC858 /* BBUTrackItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84FE177B7FB000CEC858 /* BBUTrackItem.m */; };
+		86AB8502177B9D5100CEC858 /* BBUTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB8501177B9D5100CEC858 /* BBUTrackCell.m */; };
 		8EA8EC2451BB478EA725C83D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCF503289A34157BE1CC387 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,12 @@
 		86AB84F5177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+BBUAdditions.m"; sourceTree = "<group>"; };
 		86AB84F7177B740200CEC858 /* UIView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Geometry.h"; sourceTree = "<group>"; };
 		86AB84F8177B740200CEC858 /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
+		86AB84FA177B7A9D00CEC858 /* BBUTrackSearchDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBUTrackSearchDataSource.h; sourceTree = "<group>"; };
+		86AB84FB177B7A9D00CEC858 /* BBUTrackSearchDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBUTrackSearchDataSource.m; sourceTree = "<group>"; };
+		86AB84FD177B7FB000CEC858 /* BBUTrackItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUTrackItem.h; sourceTree = "<group>"; };
+		86AB84FE177B7FB000CEC858 /* BBUTrackItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUTrackItem.m; sourceTree = "<group>"; };
+		86AB8500177B9D5100CEC858 /* BBUTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUTrackCell.h; sourceTree = "<group>"; };
+		86AB8501177B9D5100CEC858 /* BBUTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUTrackCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +141,12 @@
 				86AB84CC177B5AFA00CEC858 /* BBUAppDelegate.m */,
 				86AB84F1177B6DE500CEC858 /* BBUSoundListViewController.h */,
 				86AB84F2177B6DE500CEC858 /* BBUSoundListViewController.m */,
+				86AB8500177B9D5100CEC858 /* BBUTrackCell.h */,
+				86AB8501177B9D5100CEC858 /* BBUTrackCell.m */,
+				86AB84FD177B7FB000CEC858 /* BBUTrackItem.h */,
+				86AB84FE177B7FB000CEC858 /* BBUTrackItem.m */,
+				86AB84FA177B7A9D00CEC858 /* BBUTrackSearchDataSource.h */,
+				86AB84FB177B7A9D00CEC858 /* BBUTrackSearchDataSource.m */,
 				86AB84F4177B6EEA00CEC858 /* UIAlertView+BBUAdditions.h */,
 				86AB84F5177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m */,
 				86AB84F7177B740200CEC858 /* UIView+Geometry.h */,
@@ -299,9 +314,12 @@
 			files = (
 				86AB84F9177B740200CEC858 /* UIView+Geometry.m in Sources */,
 				86AB84CD177B5AFA00CEC858 /* BBUAppDelegate.m in Sources */,
+				86AB84FC177B7AAD00CEC858 /* BBUTrackSearchDataSource.m in Sources */,
+				86AB84FF177B7FB000CEC858 /* BBUTrackItem.m in Sources */,
 				86AB84F6177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m in Sources */,
 				86AB84C9177B5AFA00CEC858 /* main.m in Sources */,
 				86AB84F3177B6DE500CEC858 /* BBUSoundListViewController.m in Sources */,
+				86AB8502177B9D5100CEC858 /* BBUTrackCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

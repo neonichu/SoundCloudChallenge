@@ -9,9 +9,11 @@
 #import <SCUI.h>
 
 #import "BBUSoundListViewController.h"
+#import "BBUTrackSearchDataSource.h"
 
 @interface BBUSoundListViewController ()
 
+@property BBUTrackSearchDataSource* dataSource;
 @property (readonly, getter = isLoggedIn) BOOL loggedIn;
 @property (readonly) NSString* loginButtonTitle;
 
@@ -34,10 +36,31 @@
     return self;
 }
 
+- (void)populateViewAfterSuccessfulLogin {
+    [self.dataSource refreshWithCompletionHandler:^(NSError *error) {
+        if (error) {
+            [UIAlertView bbu_showAlertWithError:error];
+            return;
+        }
+        
+        [self.collectionView reloadData];
+    }];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     if (!self.isLoggedIn) {
         [self login];
+        return;
     }
+    
+    // FIXME: There is a timing problem when accessing the API to quickly after app launch
+    [self performSelector:@selector(populateViewAfterSuccessfulLogin) withObject:nil afterDelay:2.0];
+}
+
+-(void)viewDidLoad {
+    self.dataSource = [[BBUTrackSearchDataSource alloc] initWithQuery:@"power core"];
+    self.collectionView.dataSource = self.dataSource;
+    self.collectionView.delegate = self.dataSource;
 }
 
 #pragma mark - Deal with logging into SoundCloud
