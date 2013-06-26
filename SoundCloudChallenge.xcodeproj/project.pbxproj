@@ -17,6 +17,9 @@
 		86AB84D7177B5AFA00CEC858 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84BC177B5AFA00CEC858 /* Foundation.framework */; };
 		86AB84D8177B5AFA00CEC858 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84C0177B5AFA00CEC858 /* UIKit.framework */; };
 		86AB84E2177B5AFA00CEC858 /* SoundCloudChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84E1177B5AFA00CEC858 /* SoundCloudChallengeTests.m */; };
+		86AB84ED177B6AA900CEC858 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84EC177B6AA900CEC858 /* AddressBook.framework */; };
+		86AB84EF177B6AC100CEC858 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84EE177B6AC100CEC858 /* AddressBookUI.framework */; };
+		8EA8EC2451BB478EA725C83D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCF503289A34157BE1CC387 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CCF503289A34157BE1CC387 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D5198D759F345EF806065A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		86AB84B9177B5AFA00CEC858 /* SoundCloudChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AB84BC177B5AFA00CEC858 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86AB84BE177B5AFA00CEC858 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -44,6 +49,8 @@
 		86AB84D5177B5AFA00CEC858 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		86AB84DD177B5AFA00CEC858 /* SoundCloudChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoundCloudChallengeTests-Info.plist"; sourceTree = "<group>"; };
 		86AB84E1177B5AFA00CEC858 /* SoundCloudChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundCloudChallengeTests.m; sourceTree = "<group>"; };
+		86AB84EC177B6AA900CEC858 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		86AB84EE177B6AC100CEC858 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +58,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86AB84EF177B6AC100CEC858 /* AddressBookUI.framework in Frameworks */,
+				86AB84ED177B6AA900CEC858 /* AddressBook.framework in Frameworks */,
 				86AB84BF177B5AFA00CEC858 /* CoreGraphics.framework in Frameworks */,
 				86AB84C1177B5AFA00CEC858 /* UIKit.framework in Frameworks */,
 				86AB84BD177B5AFA00CEC858 /* Foundation.framework in Frameworks */,
+				8EA8EC2451BB478EA725C83D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +89,7 @@
 				86AB84EB177B5B7900CEC858 /* Resources */,
 				86AB84C3177B5AFA00CEC858 /* Supporting Files */,
 				86AB84DB177B5AFA00CEC858 /* Tests */,
+				1D5198D759F345EF806065A2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +105,13 @@
 		86AB84BB177B5AFA00CEC858 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86AB84EC177B6AA900CEC858 /* AddressBook.framework */,
+				86AB84EE177B6AC100CEC858 /* AddressBookUI.framework */,
 				86AB84BE177B5AFA00CEC858 /* CoreGraphics.framework */,
 				86AB84BC177B5AFA00CEC858 /* Foundation.framework */,
 				86AB84C0177B5AFA00CEC858 /* UIKit.framework */,
 				86AB84D5177B5AFA00CEC858 /* XCTest.framework */,
+				0CCF503289A34157BE1CC387 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86AB84E5177B5AFA00CEC858 /* Build configuration list for PBXNativeTarget "SoundCloudChallenge" */;
 			buildPhases = (
+				136695446EB04534B1C659CA /* Check Pods Manifest.lock */,
 				86AB84B5177B5AFA00CEC858 /* Sources */,
 				86AB84B6177B5AFA00CEC858 /* Frameworks */,
 				86AB84B7177B5AFA00CEC858 /* Resources */,
+				24177399AA254D028F9E6E9F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,6 +245,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		136695446EB04534B1C659CA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		24177399AA254D028F9E6E9F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		86AB84B5177B5AFA00CEC858 /* Sources */ = {
@@ -329,6 +376,7 @@
 		};
 		86AB84E6177B5AFA00CEC858 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D5198D759F345EF806065A2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -344,6 +392,7 @@
 		};
 		86AB84E7177B5AFA00CEC858 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D5198D759F345EF806065A2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
