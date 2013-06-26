@@ -194,6 +194,7 @@
 				86AB84B6177B5AFA00CEC858 /* Frameworks */,
 				86AB84B7177B5AFA00CEC858 /* Resources */,
 				24177399AA254D028F9E6E9F /* Copy Pods Resources */,
+				86AB8503177BA44D00CEC858 /* Show issues */,
 			);
 			buildRules = (
 			);
@@ -304,6 +305,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		86AB8503177BA44D00CEC858 /* Show issues */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Show issues";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | grep -v '/Pods' | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
