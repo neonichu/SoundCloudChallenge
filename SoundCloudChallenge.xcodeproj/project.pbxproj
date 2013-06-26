@@ -19,6 +19,9 @@
 		86AB84E2177B5AFA00CEC858 /* SoundCloudChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84E1177B5AFA00CEC858 /* SoundCloudChallengeTests.m */; };
 		86AB84ED177B6AA900CEC858 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84EC177B6AA900CEC858 /* AddressBook.framework */; };
 		86AB84EF177B6AC100CEC858 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84EE177B6AC100CEC858 /* AddressBookUI.framework */; };
+		86AB84F3177B6DE500CEC858 /* BBUSoundListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84F2177B6DE500CEC858 /* BBUSoundListViewController.m */; };
+		86AB84F6177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84F5177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m */; };
+		86AB84F9177B740200CEC858 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB84F8177B740200CEC858 /* UIView+Geometry.m */; };
 		8EA8EC2451BB478EA725C83D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCF503289A34157BE1CC387 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +54,12 @@
 		86AB84E1177B5AFA00CEC858 /* SoundCloudChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundCloudChallengeTests.m; sourceTree = "<group>"; };
 		86AB84EC177B6AA900CEC858 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		86AB84EE177B6AC100CEC858 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		86AB84F1177B6DE500CEC858 /* BBUSoundListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUSoundListViewController.h; sourceTree = "<group>"; };
+		86AB84F2177B6DE500CEC858 /* BBUSoundListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUSoundListViewController.m; sourceTree = "<group>"; };
+		86AB84F4177B6EEA00CEC858 /* UIAlertView+BBUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+BBUAdditions.h"; sourceTree = "<group>"; };
+		86AB84F5177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+BBUAdditions.m"; sourceTree = "<group>"; };
+		86AB84F7177B740200CEC858 /* UIView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Geometry.h"; sourceTree = "<group>"; };
+		86AB84F8177B740200CEC858 /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +130,12 @@
 			children = (
 				86AB84CB177B5AFA00CEC858 /* BBUAppDelegate.h */,
 				86AB84CC177B5AFA00CEC858 /* BBUAppDelegate.m */,
+				86AB84F1177B6DE500CEC858 /* BBUSoundListViewController.h */,
+				86AB84F2177B6DE500CEC858 /* BBUSoundListViewController.m */,
+				86AB84F4177B6EEA00CEC858 /* UIAlertView+BBUAdditions.h */,
+				86AB84F5177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m */,
+				86AB84F7177B740200CEC858 /* UIView+Geometry.h */,
+				86AB84F8177B740200CEC858 /* UIView+Geometry.m */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -282,8 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86AB84F9177B740200CEC858 /* UIView+Geometry.m in Sources */,
 				86AB84CD177B5AFA00CEC858 /* BBUAppDelegate.m in Sources */,
+				86AB84F6177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m in Sources */,
 				86AB84C9177B5AFA00CEC858 /* main.m in Sources */,
+				86AB84F3177B6DE500CEC858 /* BBUSoundListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
