@@ -40,7 +40,8 @@ static const CGFloat kDefaultTitleHeight = 20.0;
 
 -(void)layoutSubviews {
     self.imageView.size = self.frame.size;
-    self.titleLabel.y = self.imageView.height - self.titleLabel.height;
+    self.imageView.height -= kDefaultTitleHeight;
+    self.titleLabel.y = self.height - self.titleLabel.height;
 }
 
 @end
