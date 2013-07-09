@@ -64,8 +64,7 @@
         return;
     }
     
-    // FIXME: There is a timing problem when accessing the API to quickly after app launch
-    [self performSelector:@selector(populateViewAfterSuccessfulLogin) withObject:nil afterDelay:2.0];
+    [self performSelector:@selector(populateViewAfterSuccessfulLogin) withObject:nil afterDelay:0.5];
 }
 
 -(void)viewDidLoad {
