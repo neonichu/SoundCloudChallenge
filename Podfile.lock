@@ -7,6 +7,7 @@ PODS:
     - JSONKit
     - OHAttributedLabel
   - JSONKit (1.5pre)
+  - MMProgressHUD (0.1.0)
   - NSObject+Expectation (0.2)
   - NXOAuth2Client (1.2.1)
   - OHAttributedLabel (3.4.1)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - AFNetworking
   - CocoaSoundCloudAPI (= 1.0.1)
   - CocoaSoundCloudUI (= 1.0.5)
+  - MMProgressHUD
   - NSObject+Expectation (= 0.2)
 
 SPEC CHECKSUMS:
@@ -22,6 +24,7 @@ SPEC CHECKSUMS:
   CocoaSoundCloudAPI: 71e8ac175772ed161bbff6f46f04b171136a8292
   CocoaSoundCloudUI: 7c145af797c4e9c4e5da34d211fd689020ecff86
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  MMProgressHUD: f04c6eaf027c5d37cd1fadc7ee9f567e5db12c5f
   NSObject+Expectation: 7acea14a0ac731cb78b9402ac3d314327bd6a143
   NXOAuth2Client: 478bc4f9a04e7ba9908b6c40f8669321676af0ee
   OHAttributedLabel: 770332ef810ca15c9bd4a79f300ce620bc443e9d

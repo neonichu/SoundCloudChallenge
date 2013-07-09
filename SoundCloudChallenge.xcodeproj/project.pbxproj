@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86617B3F177F206D0092B932 /* UIColor+SoundCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 86617B3E177F206D0092B932 /* UIColor+SoundCloud.m */; };
 		86617B41177F29F70092B932 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86617B40177F29F70092B932 /* Settings.bundle */; };
 		86AB84BD177B5AFA00CEC858 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84BC177B5AFA00CEC858 /* Foundation.framework */; };
 		86AB84BF177B5AFA00CEC858 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84BE177B5AFA00CEC858 /* CoreGraphics.framework */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		0CCF503289A34157BE1CC387 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5198D759F345EF806065A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		86617B3D177F206C0092B932 /* UIColor+SoundCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SoundCloud.h"; sourceTree = "<group>"; };
+		86617B3E177F206D0092B932 /* UIColor+SoundCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SoundCloud.m"; sourceTree = "<group>"; };
 		86617B40177F29F70092B932 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		86AB84B9177B5AFA00CEC858 /* SoundCloudChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AB84BC177B5AFA00CEC858 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,8 @@
 				86AB84FB177B7A9D00CEC858 /* BBUTrackSearchDataSource.m */,
 				86AB84F4177B6EEA00CEC858 /* UIAlertView+BBUAdditions.h */,
 				86AB84F5177B6EEA00CEC858 /* UIAlertView+BBUAdditions.m */,
+				86617B3D177F206C0092B932 /* UIColor+SoundCloud.h */,
+				86617B3E177F206D0092B932 /* UIColor+SoundCloud.m */,
 				86AB84F7177B740200CEC858 /* UIView+Geometry.h */,
 				86AB84F8177B740200CEC858 /* UIView+Geometry.m */,
 			);
@@ -339,6 +344,7 @@
 				86AB84C9177B5AFA00CEC858 /* main.m in Sources */,
 				86AB84F3177B6DE500CEC858 /* BBUSoundListViewController.m in Sources */,
 				86AB8502177B9D5100CEC858 /* BBUTrackCell.m in Sources */,
+				86617B3F177F206D0092B932 /* UIColor+SoundCloud.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

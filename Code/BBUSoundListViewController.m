@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Boris Bügling. All rights reserved.
 //
 
+#import <MMProgressHUD/MMProgressHUD.h>
 #import <SCUI.h>
 
 #import "BBUSoundListViewController.h"
@@ -27,6 +28,11 @@
 {
     self = [super initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
     if (self) {
+        UICollectionViewFlowLayout* layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+        layout.itemSize = CGSizeMake(100.0, 100.0);
+        
+        self.collectionView.backgroundColor = [UIColor whiteColor];
+        
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.loginButtonTitle
                                                                                   style:UIBarButtonItemStyleBordered
                                                                                  target:self
@@ -37,7 +43,12 @@
 }
 
 - (void)populateViewAfterSuccessfulLogin {
+    [MMProgressHUD showWithStatus:NSLocalizedString(@"Fetching data...", nil)];
+    [MMProgressHUD sharedHUD].hud.backgroundColor = [UIColor sc_color];
+    
     [self.dataSource refreshWithCompletionHandler:^(NSError *error) {
+        [MMProgressHUD dismiss];
+        
         if (error) {
             [UIAlertView bbu_showAlertWithError:error];
             return;

@@ -25,13 +25,14 @@ static const CGFloat kDefaultTitleHeight = 20.0;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.contentView.backgroundColor = [UIColor redColor];
+        self.contentView.backgroundColor = [UIColor sc_color];
         
         self.imageView = [[UIImageView alloc] initWithFrame:frame];
         [self.contentView addSubview:self.imageView];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, self.imageView.height - kDefaultTitleHeight,
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, self.height - kDefaultTitleHeight,
                                                                     self.imageView.width, kDefaultTitleHeight)];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:self.titleLabel];
     }
     return self;
