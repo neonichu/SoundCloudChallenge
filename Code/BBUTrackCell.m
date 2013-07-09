@@ -27,7 +27,7 @@ static const CGFloat kDefaultTitleHeight = 20.0;
     if (self) {
         self.contentView.backgroundColor = [UIColor sc_color];
         
-        self.imageView = [[UIImageView alloc] initWithFrame:frame];
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         [self.contentView addSubview:self.imageView];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, self.height - kDefaultTitleHeight,
