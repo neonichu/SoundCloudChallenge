@@ -20,3 +20,8 @@
     #import "UIColor+SoundCloud.h"
     #import "UIView+Geometry.h"
 #endif
+
+// Disable NSLog in non-debug builds.
+#if !defined(DEBUG)
+#define NSLog(...)
+#endif
