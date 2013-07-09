@@ -60,8 +60,6 @@ static NSString* const kCellIdentifier = @"trackCell";
                      return;
                  }
                  
-                 NSLog(@"Got %i tracks from SoundCloud API.", [tracks count]);
-                 
                  NSMutableArray* tempTracks = [NSMutableArray new];
                  
                  for (id track in [tracks nilUnlessKindOfClass:[NSArray class]]) {

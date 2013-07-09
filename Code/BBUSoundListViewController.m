@@ -88,11 +88,12 @@
         loginViewController = [SCLoginViewController loginViewControllerWithPreparedURL:preparedURL
                                                                       completionHandler:^(NSError *error){
                                                                           if (SC_CANCELED(error)) {
-                                                                              NSLog(@"Canceled!");
+                                                                              NSLog(@"User canceled login.");
                                                                           } else if (error) {
                                                                               [UIAlertView bbu_showAlertWithError:error];
                                                                           } else {
-                                                                              NSLog(@"Done!");
+                                                                              NSLog(@"User logged in.");
+                                                                              [self populateViewAfterSuccessfulLogin];
                                                                           }
                                                                       }];
         
