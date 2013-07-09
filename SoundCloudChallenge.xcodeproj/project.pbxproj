@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86617B41177F29F70092B932 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86617B40177F29F70092B932 /* Settings.bundle */; };
 		86AB84BD177B5AFA00CEC858 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84BC177B5AFA00CEC858 /* Foundation.framework */; };
 		86AB84BF177B5AFA00CEC858 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84BE177B5AFA00CEC858 /* CoreGraphics.framework */; };
 		86AB84C1177B5AFA00CEC858 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84C0177B5AFA00CEC858 /* UIKit.framework */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		0CCF503289A34157BE1CC387 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5198D759F345EF806065A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		86617B40177F29F70092B932 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		86AB84B9177B5AFA00CEC858 /* SoundCloudChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AB84BC177B5AFA00CEC858 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86AB84BE177B5AFA00CEC858 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				86AB84CE177B5AFA00CEC858 /* Images.xcassets */,
+				86617B40177F29F70092B932 /* Settings.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86617B41177F29F70092B932 /* Settings.bundle in Resources */,
 				86AB84CF177B5AFA00CEC858 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
