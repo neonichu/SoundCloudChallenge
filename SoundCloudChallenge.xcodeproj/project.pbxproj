@@ -10,6 +10,8 @@
 		86617B3F177F206D0092B932 /* UIColor+SoundCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 86617B3E177F206D0092B932 /* UIColor+SoundCloud.m */; };
 		86617B41177F29F70092B932 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86617B40177F29F70092B932 /* Settings.bundle */; };
 		869E0B61178CB7A200676497 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869E0B60178CB7A200676497 /* Default-568h@2x.png */; };
+		869E0B64178CC22800676497 /* DefaultTrackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 869E0B62178CC22800676497 /* DefaultTrackImage.png */; };
+		869E0B65178CC22800676497 /* DefaultTrackImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869E0B63178CC22800676497 /* DefaultTrackImage@2x.png */; };
 		86AB84BD177B5AFA00CEC858 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84BC177B5AFA00CEC858 /* Foundation.framework */; };
 		86AB84BF177B5AFA00CEC858 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84BE177B5AFA00CEC858 /* CoreGraphics.framework */; };
 		86AB84C1177B5AFA00CEC858 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AB84C0177B5AFA00CEC858 /* UIKit.framework */; };
@@ -48,6 +50,8 @@
 		86617B3E177F206D0092B932 /* UIColor+SoundCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SoundCloud.m"; sourceTree = "<group>"; };
 		86617B40177F29F70092B932 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		869E0B60178CB7A200676497 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		869E0B62178CC22800676497 /* DefaultTrackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultTrackImage.png; sourceTree = "<group>"; };
+		869E0B63178CC22800676497 /* DefaultTrackImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultTrackImage@2x.png"; sourceTree = "<group>"; };
 		86AB84B9177B5AFA00CEC858 /* SoundCloudChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AB84BC177B5AFA00CEC858 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86AB84BE177B5AFA00CEC858 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -187,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				869E0B60178CB7A200676497 /* Default-568h@2x.png */,
+				869E0B62178CC22800676497 /* DefaultTrackImage.png */,
+				869E0B63178CC22800676497 /* DefaultTrackImage@2x.png */,
 				86AB84CE177B5AFA00CEC858 /* Images.xcassets */,
 				86617B40177F29F70092B932 /* Settings.bundle */,
 			);
@@ -278,6 +284,8 @@
 				86617B41177F29F70092B932 /* Settings.bundle in Resources */,
 				86AB84CF177B5AFA00CEC858 /* Images.xcassets in Resources */,
 				869E0B61178CB7A200676497 /* Default-568h@2x.png in Resources */,
+				869E0B64178CC22800676497 /* DefaultTrackImage.png in Resources */,
+				869E0B65178CC22800676497 /* DefaultTrackImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
