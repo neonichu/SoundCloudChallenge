@@ -21,6 +21,8 @@
     #import "UIView+Geometry.h"
 #endif
 
+#define BBUSystemVersionLessThan(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 // Disable NSLog in non-debug builds.
 #if !defined(DEBUG)
 #define NSLog(...)

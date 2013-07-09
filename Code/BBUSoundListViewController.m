@@ -97,10 +97,16 @@
                                                                       }];
         
         [self presentViewController:loginViewController animated:YES completion:^{
+#ifdef __IPHONE_7_0
+            if (BBUSystemVersionLessThan(@"7.0")) {
+                return;
+            }
+            
             [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
             
             loginViewController.view.y += 20.0;
             loginViewController.view.height -= 20.0;
+#endif
         }];
     }];
 }
