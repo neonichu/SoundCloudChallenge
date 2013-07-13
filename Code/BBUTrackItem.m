@@ -50,7 +50,7 @@
     if (self) {
         self.artworkURL = [[self class] safeURLFromString:dictionary[@"artwork_url"]];
         self.avatarURL = [[self class] safeURLFromString:dictionary[@"user"][@"avatar_url"]];
-        self.identifier = [dictionary[@"id"] nilUnlessKindOfClass:[NSString class]];
+        self.identifier = [dictionary[@"id"] nilUnlessKindOfClass:[NSNumber class]];
         self.permalinkURL = [[self class] safeURLFromString:dictionary[@"permalink_url"]];
         self.title = [dictionary[@"title"] nilUnlessKindOfClass:[NSString class]];
         self.waveformURL = [[self class] safeURLFromString:dictionary[@"waveform_url"]];
