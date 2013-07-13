@@ -19,6 +19,7 @@
     #import "UIAlertView+BBUAdditions.h"
     #import "UIColor+SoundCloud.h"
     #import "UIView+Geometry.h"
+    #import "UIViewController+StatusBar.h"
 #endif
 
 #define BBUSystemVersionLessThan(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)

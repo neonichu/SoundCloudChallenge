@@ -80,6 +80,16 @@
 
 #pragma mark - Deal with logging into SoundCloud
 
+-(UIView*)connectToSoundCloudTitleViewFromLoginViewControllerView:(UIView*)view {
+    for (int i = 0; i < 4; i++) {
+        if (view.subviews.count < 1) {
+            break;
+        }
+        view = [view.subviews lastObject];
+    }
+    return view;
+}
+
 -(BOOL)isLoggedIn {
     return [SCSoundCloud account] != nil;
 }
@@ -90,7 +100,11 @@
         SCLoginViewController *loginViewController;
         
         loginViewController = [SCLoginViewController loginViewControllerWithPreparedURL:preparedURL
-                                                                      completionHandler:^(NSError *error){
+                                                                      completionHandler:^(NSError *error) {
+                                                                          if (BBUSystemVersionLessThan(@"7.0")) {
+                                                                              self.statusBarColor = [UIColor sc_color];
+                                                                          }
+                                                                          
                                                                           if (SC_CANCELED(error)) {
                                                                               self.cancelled = YES;
                                                                           } else if (error) {
@@ -102,11 +116,14 @@
                                                                       }];
         
         [self presentViewController:loginViewController animated:YES completion:^{
-#ifdef __IPHONE_7_0
             if (BBUSystemVersionLessThan(@"7.0")) {
+                // Adjust status bar to match SCConnectToSoundCloudTitleView's color
+                UIView* titleView = [self connectToSoundCloudTitleViewFromLoginViewControllerView:loginViewController.view];
+                self.statusBarColor = titleView.backgroundColor;
                 return;
             }
             
+#ifdef __IPHONE_7_0
             [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
             
             loginViewController.view.y += 20.0;
