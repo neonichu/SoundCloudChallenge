@@ -12,6 +12,7 @@ typedef void(^BBURefreshCompletionHandler)(NSError* error);
 
 @interface BBUTrackSearchDataSource : NSObject <UICollectionViewDataSource, UICollectionViewDelegate>
 
+-(void)clear;
 -(id)initWithQuery:(NSString*)query;
 -(void)refreshWithCompletionHandler:(BBURefreshCompletionHandler)completionHandler;
 

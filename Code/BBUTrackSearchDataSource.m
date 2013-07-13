@@ -27,6 +27,10 @@ static NSString* const kCellIdentifier = @"trackCell";
 
 @implementation BBUTrackSearchDataSource
 
+-(void)clear {
+    self.tracks = nil;
+}
+
 -(id)initWithQuery:(NSString *)query {
     self = [super init];
     if (self) {
