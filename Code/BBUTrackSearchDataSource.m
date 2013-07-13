@@ -101,10 +101,16 @@ static NSString* const kCellIdentifier = @"trackCell";
 #pragma mark - UICollectionView delegate methods
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    BBUTrackItem* track = self.tracks[indexPath.row];
+    UIApplication* app = [UIApplication sharedApplication];
     
-    // TODO: Check if SoundCloud app is installed and open track there if it is
-    [[UIApplication sharedApplication] openURL:track.permalinkURL];
+    BBUTrackItem* track = self.tracks[indexPath.row];
+    NSURL* trackURL = [NSURL URLWithString:[NSString stringWithFormat:@"soundcloud:tracks:%@", track.identifier]];
+    
+    if ([app canOpenURL:trackURL]) {
+        [app openURL:trackURL];
+    } else {
+        [app openURL:track.permalinkURL];
+    }
 }
 
 @end
