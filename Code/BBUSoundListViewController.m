@@ -14,6 +14,7 @@
 
 @interface BBUSoundListViewController ()
 
+@property (getter = hasCancelled) BOOL cancelled;
 @property BBUTrackSearchDataSource* dataSource;
 @property (readonly, getter = isLoggedIn) BOOL loggedIn;
 @property (readonly) NSString* loginButtonTitle;
@@ -59,6 +60,10 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    if (self.hasCancelled) {
+        return;
+    }
+    
     if (!self.isLoggedIn) {
         [self login];
         return;
@@ -87,12 +92,12 @@
         loginViewController = [SCLoginViewController loginViewControllerWithPreparedURL:preparedURL
                                                                       completionHandler:^(NSError *error){
                                                                           if (SC_CANCELED(error)) {
-                                                                              NSLog(@"User canceled login.");
+                                                                              self.cancelled = YES;
                                                                           } else if (error) {
                                                                               [UIAlertView bbu_showAlertWithError:error];
                                                                           } else {
-                                                                              NSLog(@"User logged in.");
                                                                               [self populateViewAfterSuccessfulLogin];
+                                                                              [self refreshLoginButton];
                                                                           }
                                                                       }];
         
@@ -116,7 +121,20 @@
 }
 
 -(void)logInOrOut {
-    // TODO: Implement logout and re-login
+    if (self.isLoggedIn) {
+        [SCSoundCloud removeAccess];
+        
+        [self.dataSource clear];
+        [self.collectionView reloadData];
+        
+        [self refreshLoginButton];
+    } else {
+        [self login];
+    }
+}
+
+-(void)refreshLoginButton {
+    self.navigationItem.rightBarButtonItem.title = self.loginButtonTitle;
 }
 
 @end
