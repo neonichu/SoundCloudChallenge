@@ -106,6 +106,12 @@
     [self.dataSource addObserver:self forKeyPath:@"tracks" options:0 context:NULL];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    if (!BBUSystemVersionLessThan(@"7.0")) {
+        self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    }
+}
+
 #pragma mark - Deal with logging into SoundCloud
 
 -(UIView*)connectToSoundCloudTitleViewFromLoginViewControllerView:(UIView*)view {

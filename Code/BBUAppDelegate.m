@@ -22,9 +22,15 @@
 #pragma mark -
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[UIBarButtonItem appearance] setTitleTextAttributes:[self titleTextAttributes] forState:UIControlStateNormal];
-    [[UINavigationBar appearance] setTintColor:[UIColor sc_color]];
-    [[UINavigationBar appearance] setTitleTextAttributes:[self titleTextAttributes]];
+    if (BBUSystemVersionLessThan(@"7.0")) {
+        [[UIBarButtonItem appearance] setTitleTextAttributes:[self titleTextAttributes] forState:UIControlStateNormal];
+        [[UINavigationBar appearance] setTintColor:[UIColor sc_color]];
+        [[UINavigationBar appearance] setTitleTextAttributes:[self titleTextAttributes]];
+    } else {
+#ifdef __IPHONE_7_0
+        [[UINavigationBar appearance] setBarTintColor:[UIColor sc_color]];
+#endif
+    }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

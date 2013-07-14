@@ -27,8 +27,15 @@
     if (self) {
         self.searchBar = [[UISearchBar alloc] initWithFrame:frame];
         self.searchBar.height -= 2.0;
-        self.searchBar.tintColor = [UIColor sc_color];
         [self addSubview:self.searchBar];
+        
+        if (BBUSystemVersionLessThan(@"7.0")) {
+            self.searchBar.tintColor = [UIColor sc_color];
+        } else {
+#ifdef __IPHONE_7_0
+            self.searchBar.barTintColor = [UIColor sc_color];
+#endif
+        }
     }
     return self;
 }
