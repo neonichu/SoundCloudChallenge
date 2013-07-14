@@ -6,11 +6,21 @@
 //  Copyright (c) 2013 Boris Bügling. All rights reserved.
 //
 
+#ifdef __IPHONE_7_0
 #import <XCTest/XCTest.h>
+#else 
+#import <SenTestingKit/SenTestingKit.h>
+
+#define XCTFail STFail
+
+typedef SenTestCase XCTestCase;
+#endif
 
 @interface SoundCloudChallengeTests : XCTestCase
 
 @end
+
+#pragma mark -
 
 @implementation SoundCloudChallengeTests
 
