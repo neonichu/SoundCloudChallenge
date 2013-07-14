@@ -48,9 +48,7 @@ static NSString* const kSearchQueryKey      = @"SearchQuery";
                   onResource:[NSURL URLWithString:@"https://api.soundcloud.com/tracks.json"]
              usingParameters:@{ @"q": self.query, @"order": @"hotness" }
                  withAccount:[SCSoundCloud account]
-      sendingProgressHandler:^(unsigned long long bytesSend, unsigned long long bytesTotal) {
-          // TODO: Show some fancy progress
-      }
+      sendingProgressHandler:nil
              responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
                  if (!responseData) {
                      if (completionHandler) {
