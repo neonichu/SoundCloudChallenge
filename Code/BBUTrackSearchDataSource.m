@@ -12,11 +12,14 @@
 
 #import "BBUTrackCell.h"
 #import "BBUTrackItem.h"
+#import "BBUTrackSearch.h"
 #import "BBUTrackSearchDataSource.h"
 
-static NSString* const kCellIdentifier = @"trackCell";
+static NSString* const kCellIdentifier      = @"trackCell";
+static NSString* const kHeaderIdentifier    = @"headerId";
+static NSString* const kSearchQueryKey      = @"SearchQuery";
 
-@interface BBUTrackSearchDataSource ()
+@interface BBUTrackSearchDataSource () <UISearchBarDelegate>
 
 @property NSString* query;
 @property NSArray* tracks;
@@ -34,7 +37,8 @@ static NSString* const kCellIdentifier = @"trackCell";
 -(id)initWithQuery:(NSString *)query {
     self = [super init];
     if (self) {
-        self.query = query;
+        NSString* defaultsQuery = [[NSUserDefaults standardUserDefaults] valueForKey:kSearchQueryKey];
+        self.query = defaultsQuery != nil ? defaultsQuery : query;
     }
     return self;
 }
@@ -96,7 +100,24 @@ static NSString* const kCellIdentifier = @"trackCell";
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     [collectionView registerClass:[BBUTrackCell class] forCellWithReuseIdentifier:kCellIdentifier];
+    [collectionView registerClass:[BBUTrackSearch class]
+       forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+              withReuseIdentifier:kHeaderIdentifier];
     return self.tracks.count;
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+          viewForSupplementaryElementOfKind:(NSString *)kind
+                                atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        BBUTrackSearch* trackSearch = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                         withReuseIdentifier:kHeaderIdentifier
+                                                                                forIndexPath:indexPath];
+        trackSearch.delegate = self;
+        trackSearch.text = self.query;
+        return trackSearch;
+    }
+    return nil;
 }
 
 #pragma mark - UICollectionView delegate methods
@@ -112,6 +133,17 @@ static NSString* const kCellIdentifier = @"trackCell";
     } else {
         [app openURL:track.permalinkURL];
     }
+}
+
+#pragma mark - UISearchBar delegate 
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    
+    self.query = searchBar.text;
+    [[NSUserDefaults standardUserDefaults] setValue:self.query forKey:kSearchQueryKey];
+    
+    [self refreshWithCompletionHandler:nil];
 }
 
 @end

@@ -20,6 +20,7 @@
 		86587E371792B9B300F27B20 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86587E2F1792B9B300F27B20 /* Icon-Small@2x.png */; };
 		86587E381792B9B300F27B20 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 86587E301792B9B300F27B20 /* Icon.png */; };
 		86587E391792B9B300F27B20 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86587E311792B9B300F27B20 /* Icon@2x.png */; };
+		86587E3C179339C800F27B20 /* BBUTrackSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 86587E3B179339C800F27B20 /* BBUTrackSearch.m */; };
 		86617B3F177F206D0092B932 /* UIColor+SoundCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 86617B3E177F206D0092B932 /* UIColor+SoundCloud.m */; };
 		86617B41177F29F70092B932 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86617B40177F29F70092B932 /* Settings.bundle */; };
 		869E0B61178CB7A200676497 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869E0B60178CB7A200676497 /* Default-568h@2x.png */; };
@@ -73,6 +74,8 @@
 		86587E2F1792B9B300F27B20 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		86587E301792B9B300F27B20 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		86587E311792B9B300F27B20 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		86587E3A179339C800F27B20 /* BBUTrackSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUTrackSearch.h; sourceTree = "<group>"; };
+		86587E3B179339C800F27B20 /* BBUTrackSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUTrackSearch.m; sourceTree = "<group>"; };
 		86617B3D177F206C0092B932 /* UIColor+SoundCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SoundCloud.h"; sourceTree = "<group>"; };
 		86617B3E177F206D0092B932 /* UIColor+SoundCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SoundCloud.m"; sourceTree = "<group>"; };
 		86617B40177F29F70092B932 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				86AB8501177B9D5100CEC858 /* BBUTrackCell.m */,
 				86AB84FD177B7FB000CEC858 /* BBUTrackItem.h */,
 				86AB84FE177B7FB000CEC858 /* BBUTrackItem.m */,
+				86587E3A179339C800F27B20 /* BBUTrackSearch.h */,
+				86587E3B179339C800F27B20 /* BBUTrackSearch.m */,
 				86AB84FA177B7A9D00CEC858 /* BBUTrackSearchDataSource.h */,
 				86AB84FB177B7A9D00CEC858 /* BBUTrackSearchDataSource.m */,
 				86AB84F4177B6EEA00CEC858 /* UIAlertView+BBUAdditions.h */,
@@ -411,6 +416,7 @@
 				86AB8502177B9D5100CEC858 /* BBUTrackCell.m in Sources */,
 				86617B3F177F206D0092B932 /* UIColor+SoundCloud.m in Sources */,
 				86587E1F1791E58900F27B20 /* UIViewController+StatusBar.m in Sources */,
+				86587E3C179339C800F27B20 /* BBUTrackSearch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,5 +15,6 @@ typedef void(^BBURefreshCompletionHandler)(NSError* error);
 -(void)clear;
 -(id)initWithQuery:(NSString*)query;
 -(void)refreshWithCompletionHandler:(BBURefreshCompletionHandler)completionHandler;
+-(NSArray*)tracks;
 
 @end

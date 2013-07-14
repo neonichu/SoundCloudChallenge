@@ -28,11 +28,16 @@
 
 @implementation BBUSoundListViewController
 
+- (void)dealloc {
+    [self.dataSource removeObserver:self forKeyPath:@"tracks" context:nil];
+}
+
 - (id)init
 {
     self = [super initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
     if (self) {
         UICollectionViewFlowLayout* layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+        layout.headerReferenceSize = CGSizeMake(self.view.width, 44.0);
         layout.itemSize = CGSizeMake(100.0, 100.0);
         
         self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -50,6 +55,13 @@
     return self;
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"tracks"]) {
+        [self.collectionView reloadData];
+        [self performSelector:@selector(startAnimating) withObject:nil afterDelay:1.0];
+    }
+}
+
 - (void)populateViewAfterSuccessfulLogin {
     [MMProgressHUD showWithStatus:NSLocalizedString(@"Fetching data...", nil)];
     [MMProgressHUD sharedHUD].hud.backgroundColor = [UIColor sc_color];
@@ -61,9 +73,6 @@
             [UIAlertView bbu_showAlertWithError:error];
             return;
         }
-        
-        [self.collectionView reloadData];
-        [self performSelector:@selector(startAnimating) withObject:nil afterDelay:1.0];
     }];
 }
 
@@ -94,6 +103,8 @@
     self.dataSource = [[BBUTrackSearchDataSource alloc] initWithQuery:@"power core"];
     self.collectionView.dataSource = self.dataSource;
     self.collectionView.delegate = self.dataSource;
+    
+    [self.dataSource addObserver:self forKeyPath:@"tracks" options:0 context:NULL];
 }
 
 #pragma mark - Deal with logging into SoundCloud
