@@ -10,6 +10,7 @@
 #import <SCUI.h>
 
 #import "BBUSoundListViewController.h"
+#import "BBUTrackCell.h"
 #import "BBUTrackSearchDataSource.h"
 
 @interface BBUSoundListViewController ()
@@ -56,7 +57,14 @@
         }
         
         [self.collectionView reloadData];
+        [self performSelector:@selector(startAnimating) withObject:nil afterDelay:1.0];
     }];
+}
+
+- (void)startAnimating {
+    for (BBUTrackCell* cell in self.collectionView.visibleCells) {
+        [cell startAnimating];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {

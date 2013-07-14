@@ -10,7 +10,9 @@
 
 @interface BBUTrackCell : UICollectionViewCell
 
+-(UIImageView*)flipSideImageView;
 -(UIImageView*)imageView;
+-(void)startAnimating;
 -(UILabel*)titleLabel;
 
 @end
