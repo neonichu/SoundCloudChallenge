@@ -13,8 +13,7 @@
 
 @implementation BBUAppDelegate
 
-+ (void)initialize;
-{
++(void)initialize {
     [SCSoundCloud  setClientID:@"1e5d51ce1146673349fd4c7e2b352360"
                         secret:@"30053f1de703e146cc2a956a3898d468"
                    redirectURL:[NSURL URLWithString:@"scchallenge://login"]];
@@ -22,8 +21,7 @@
 
 #pragma mark -
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[UIBarButtonItem appearance] setTitleTextAttributes:[self titleTextAttributes] forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTintColor:[UIColor sc_color]];
     [[UINavigationBar appearance] setTitleTextAttributes:[self titleTextAttributes]];

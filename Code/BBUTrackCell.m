@@ -26,8 +26,7 @@ static const CGFloat kDefaultTitleHeight = 20.0;
 
 @implementation BBUTrackCell
 
-- (id)initWithFrame:(CGRect)frame
-{
+-(id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.contentView.backgroundColor = [UIColor whiteColor];

@@ -28,12 +28,11 @@
 
 @implementation BBUSoundListViewController
 
-- (void)dealloc {
+-(void)dealloc {
     [self.dataSource removeObserver:self forKeyPath:@"tracks" context:nil];
 }
 
-- (id)init
-{
+-(id)init {
     self = [super initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
     if (self) {
         UICollectionViewFlowLayout* layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
@@ -55,14 +54,14 @@
     return self;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"tracks"]) {
         [self.collectionView reloadData];
         [self performSelector:@selector(startAnimating) withObject:nil afterDelay:1.0];
     }
 }
 
-- (void)populateViewAfterSuccessfulLogin {
+-(void)populateViewAfterSuccessfulLogin {
     [MMProgressHUD showWithStatus:NSLocalizedString(@"Fetching data...", nil)];
     [MMProgressHUD sharedHUD].hud.backgroundColor = [UIColor sc_color];
     
@@ -76,13 +75,13 @@
     }];
 }
 
-- (void)startAnimating {
+-(void)startAnimating {
     for (BBUTrackCell* cell in self.collectionView.visibleCells) {
         [cell startAnimating];
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
 #ifdef MAKE_DEFAULT_PNG
     return;
 #endif
@@ -123,8 +122,7 @@
     return [SCSoundCloud account] != nil;
 }
 
-- (void)login;
-{
+- (void)login {
     [SCSoundCloud requestAccessWithPreparedAuthorizationURLHandler:^(NSURL *preparedURL){
         SCLoginViewController *loginViewController;
         
