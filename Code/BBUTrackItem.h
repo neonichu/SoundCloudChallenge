@@ -14,7 +14,7 @@
 
 -(NSURL*)artworkURL;
 -(NSURL*)avatarURL;
--(NSString*)identifier;
+-(NSNumber*)identifier;
 -(NSURL*)permalinkURL;
 -(NSString*)title;
 -(NSURL*)waveformURL;

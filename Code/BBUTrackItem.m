@@ -14,7 +14,7 @@
 
 @property NSURL* artworkURL;
 @property NSURL* avatarURL;
-@property NSString* identifier;
+@property NSNumber* identifier;
 @property NSURL* permalinkURL;
 @property NSString* title;
 @property NSURL* waveformURL;
