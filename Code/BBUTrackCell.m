@@ -43,8 +43,8 @@ static const CGFloat kDefaultTitleHeight = 20.0;
         self.imageView.layer.doubleSided = NO;
         [self.contentView addSubview:self.imageView];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, self.height - kDefaultTitleHeight,
-                                                                    self.imageView.width, kDefaultTitleHeight)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, self.height - kDefaultTitleHeight,
+                                                                    0.0, kDefaultTitleHeight)];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.titleLabel];
@@ -60,6 +60,7 @@ static const CGFloat kDefaultTitleHeight = 20.0;
     
     self.flipSideImageView.frame = self.imageView.frame;
     
+    self.titleLabel.width = self.imageView.width - 10.0;
     self.titleLabel.y = self.height - self.titleLabel.height;
 }
 
