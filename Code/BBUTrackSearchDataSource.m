@@ -87,7 +87,7 @@ static NSString* const kCellIdentifier = @"trackCell";
     BBUTrackItem* track = self.tracks[indexPath.row];
     
     BBUTrackCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
-    [cell.imageView setImageWithURL:track.artworkURL placeholderImage:[UIImage imageNamed:@"DefaultTrackImage"]];
+    [cell.imageView setImageWithURL:track.waveformURL placeholderImage:[UIImage imageNamed:@"DefaultTrackImage"]];
     cell.titleLabel.text = track.title;
     
     return cell;
