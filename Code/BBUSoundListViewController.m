@@ -13,6 +13,8 @@
 #import "BBUTrackCell.h"
 #import "BBUTrackSearchDataSource.h"
 
+//#define MAKE_DEFAULT_PNG 1
+
 @interface BBUSoundListViewController ()
 
 @property (getter = hasCancelled) BOOL cancelled;
@@ -40,6 +42,10 @@
                                                                                  target:self
                                                                                  action:@selector(logInOrOut)];
         self.navigationItem.title = NSLocalizedString(@"Challenge", nil);
+        
+#ifdef MAKE_DEFAULT_PNG
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+#endif
     }
     return self;
 }
@@ -68,6 +74,10 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+#ifdef MAKE_DEFAULT_PNG
+    return;
+#endif
+    
     if (self.hasCancelled) {
         return;
     }
