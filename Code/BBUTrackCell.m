@@ -45,6 +45,7 @@ static const CGFloat kDefaultTitleHeight = 20.0;
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, self.height - kDefaultTitleHeight,
                                                                     0.0, kDefaultTitleHeight)];
+        self.titleLabel.font = [UIFont fontWithName:@"Avenir" size:10.0];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:self.titleLabel];

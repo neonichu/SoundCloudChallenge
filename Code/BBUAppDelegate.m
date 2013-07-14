@@ -24,13 +24,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[self titleTextAttributes] forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTintColor:[UIColor sc_color]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[self titleTextAttributes]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[BBUSoundListViewController new]];
     [self.window makeKeyAndVisible];
     return YES;
+}
+     
+-(NSDictionary*)titleTextAttributes {
+    return @{ NSFontAttributeName: @"Avenir" };
 }
 
 @end
