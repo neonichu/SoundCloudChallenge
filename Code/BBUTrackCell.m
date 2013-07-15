@@ -15,10 +15,10 @@ static const CGFloat kDefaultTitleHeight = 20.0;
 @interface BBUTrackCell ()
 
 @property (getter = isAnimating) BOOL animating;
-@property UIImageView* flipSideImageView;
+@property (nonatomic) UIImageView* flipSideImageView;
 @property BOOL flipSideVisible;
-@property UIImageView* imageView;
-@property UILabel* titleLabel;
+@property (nonatomic) UIImageView* imageView;
+@property (nonatomic) UILabel* titleLabel;
 @property UIImageView* zoomingImageView;
 
 @end
@@ -27,6 +27,35 @@ static const CGFloat kDefaultTitleHeight = 20.0;
 
 @implementation BBUTrackCell
 
+-(UIImageView *)flipSideImageView {
+    if (!_flipSideImageView) {
+        _flipSideImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        
+        _flipSideImageView.layer.doubleSided = NO;
+        _flipSideImageView.userInteractionEnabled = YES;
+        
+        [_flipSideImageView addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                               action:@selector(longPressed:)]];
+    }
+    
+    return _flipSideImageView;
+}
+
+-(UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        
+        _imageView.backgroundColor = [UIColor sc_color];
+        _imageView.layer.doubleSided = NO;
+        _imageView.userInteractionEnabled = YES;
+        
+        [_imageView addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                       action:@selector(longPressed:)]];
+    }
+    
+    return _imageView;
+}
+
 -(id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -34,30 +63,12 @@ static const CGFloat kDefaultTitleHeight = 20.0;
         self.contentView.layer.borderColor = [UIColor blackColor].CGColor;
         self.contentView.layer.borderWidth = 1.0;
         
-        self.flipSideImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        self.flipSideImageView.layer.doubleSided = NO;
-        self.flipSideImageView.userInteractionEnabled = YES;
-        [self.flipSideImageView addGestureRecognizer:[[UILongPressGestureRecognizer alloc]
-                                                      initWithTarget:self action:@selector(longPressed:)]];
         [self.contentView addSubview:self.flipSideImageView];
-        
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        self.imageView.backgroundColor = [UIColor sc_color];
-        self.imageView.layer.doubleSided = NO;
-        self.imageView.userInteractionEnabled = YES;
-        [self.imageView addGestureRecognizer:[[UILongPressGestureRecognizer alloc]
-                                              initWithTarget:self action:@selector(longPressed:)]];
         [self.contentView addSubview:self.imageView];
+        [self.contentView addSubview:self.titleLabel];
         
         self.zoomingImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         [self.contentView insertSubview:self.zoomingImageView atIndex:0];
-        
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, self.height - kDefaultTitleHeight,
-                                                                    0.0, kDefaultTitleHeight)];
-        self.titleLabel.font = [UIFont fontWithName:@"Avenir" size:10.0];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.textColor = [UIColor blackColor];
-        [self.contentView addSubview:self.titleLabel];
     }
     return self;
 }
@@ -73,6 +84,19 @@ static const CGFloat kDefaultTitleHeight = 20.0;
     
     self.titleLabel.width = self.imageView.width - 10.0;
     self.titleLabel.y = self.height - self.titleLabel.height;
+}
+
+-(UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, self.height - kDefaultTitleHeight,
+                                                                0.0, kDefaultTitleHeight)];
+        
+        _titleLabel.font = [UIFont fontWithName:@"Avenir" size:10.0];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.textColor = [UIColor blackColor];
+    }
+    
+    return _titleLabel;
 }
 
 #pragma mark - Zoom gesture
