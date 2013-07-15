@@ -12,7 +12,8 @@ What does it do?
 Acknowledgements:
 
 - For used open source components, see Settings.app.
-- DefaultAvatarImage by The Noun Project.
+- DefaultAvatarImage by [The Noun Project][3].
 
 [1]: http://developers.soundcloud.com
 [2]: http://cocoapods.org
+[3]: http://thenounproject.com
