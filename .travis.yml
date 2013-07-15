@@ -1,0 +1,2 @@
+language: objective-c
+script: pod install && xcodebuild -workspace SoundCloudChallenge.xcworkspace -scheme SoundCloudChallenge
