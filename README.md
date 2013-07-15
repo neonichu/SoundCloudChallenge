@@ -1,6 +1,6 @@
 Having fun with the [SoundCloud][1] API.
 
-The app runs on iOS 6 or later and use [CocoaPods][2].
+The app runs on iOS 6 or later and uses [CocoaPods][2].
 
 Acknowledgements:
 
