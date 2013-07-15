@@ -81,8 +81,10 @@
 }
 
 -(void)populateViewAfterSuccessfulLogin {
-    [MMProgressHUD showWithStatus:NSLocalizedString(@"Fetching data...", nil)];
+    // Status label is cut-off on iOS 7
+    [MMProgressHUD showWithStatus:BBUSystemVersionLessThan(@"7.0") ? NSLocalizedString(@"Fetching data...", nil) : nil];
     [MMProgressHUD sharedHUD].hud.backgroundColor = [UIColor sc_color];
+    [MMProgressHUD sharedHUD].presentationStyle = MMProgressHUDPresentationStyleExpand;
     
     [self.dataSource refreshWithCompletionHandler:^(NSError *error) {
         [MMProgressHUD dismiss];
