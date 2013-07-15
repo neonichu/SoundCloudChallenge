@@ -77,7 +77,7 @@ static const CGFloat kDefaultTitleHeight = 20.0;
         
         viewToReset.layer.transform = CATransform3DIdentity;
         viewToReset.layer.zPosition = 0;
-        [self insertSubview:viewToReset belowSubview:topView];
+        [self.contentView insertSubview:viewToReset belowSubview:topView];
         
         [self startAnimating];
     }
