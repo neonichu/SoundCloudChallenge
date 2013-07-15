@@ -91,6 +91,7 @@ static NSString* const kSearchQueryKey      = @"SearchQuery";
     BBUTrackCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
     [cell.flipSideImageView setImageWithURL:track.avatarURL placeholderImage:[UIImage imageNamed:@"DefaultAvatarImage"]];
     [cell.imageView setImageWithURL:track.waveformURL placeholderImage:[UIImage imageNamed:@"DefaultTrackImage"]];
+    [cell.zoomingImageView setImageWithURL:track.artworkURL placeholderImage:[UIImage imageNamed:@"DefaultTrackImage"]];
     cell.titleLabel.text = track.title;
     
     return cell;

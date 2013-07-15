@@ -14,5 +14,6 @@
 -(UIImageView*)imageView;
 -(void)startAnimating;
 -(UILabel*)titleLabel;
+-(UIImageView*)zoomingImageView;
 
 @end

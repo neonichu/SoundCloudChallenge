@@ -19,6 +19,7 @@ static const CGFloat kDefaultTitleHeight = 20.0;
 @property BOOL flipSideVisible;
 @property UIImageView* imageView;
 @property UILabel* titleLabel;
+@property UIImageView* zoomingImageView;
 
 @end
 
@@ -35,12 +36,21 @@ static const CGFloat kDefaultTitleHeight = 20.0;
         
         self.flipSideImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         self.flipSideImageView.layer.doubleSided = NO;
+        self.flipSideImageView.userInteractionEnabled = YES;
+        [self.flipSideImageView addGestureRecognizer:[[UILongPressGestureRecognizer alloc]
+                                                      initWithTarget:self action:@selector(longPressed:)]];
         [self.contentView addSubview:self.flipSideImageView];
         
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         self.imageView.backgroundColor = [UIColor sc_color];
         self.imageView.layer.doubleSided = NO;
+        self.imageView.userInteractionEnabled = YES;
+        [self.imageView addGestureRecognizer:[[UILongPressGestureRecognizer alloc]
+                                              initWithTarget:self action:@selector(longPressed:)]];
         [self.contentView addSubview:self.imageView];
+        
+        self.zoomingImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [self.contentView insertSubview:self.zoomingImageView atIndex:0];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, self.height - kDefaultTitleHeight,
                                                                     0.0, kDefaultTitleHeight)];
@@ -59,9 +69,43 @@ static const CGFloat kDefaultTitleHeight = 20.0;
     self.imageView.x = 1.0;
     
     self.flipSideImageView.frame = self.imageView.frame;
+    self.zoomingImageView.frame = self.imageView.frame;
     
     self.titleLabel.width = self.imageView.width - 10.0;
     self.titleLabel.y = self.height - self.titleLabel.height;
+}
+
+#pragma mark - Zoom gesture
+
+-(void)longPressed:(UILongPressGestureRecognizer*)recognizer {
+    if (recognizer.state != UIGestureRecognizerStateBegan) {
+        return;
+    }
+    
+    [self stopAnimating];
+    [self.contentView bringSubviewToFront:self.zoomingImageView];
+    self.zoomingImageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        self.zoomingImageView.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        if (!finished) {
+            [self resetZoomAnimation];
+            return;
+        }
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            self.zoomingImageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        } completion:^(BOOL finished) {
+            [self resetZoomAnimation];
+        }];
+    }];
+}
+
+-(void)resetZoomAnimation {
+    self.zoomingImageView.transform = CGAffineTransformIdentity;
+    [self.contentView sendSubviewToBack:self.zoomingImageView];
+    [self startAnimating];
 }
 
 #pragma mark - Flip animation
@@ -132,6 +176,12 @@ static const CGFloat kDefaultTitleHeight = 20.0;
     
     self.animating = YES;
     self.flipSideVisible = !self.flipSideVisible;
+}
+
+-(void)stopAnimating {
+    [self.flipSideImageView.layer removeAllAnimations];
+    [self.imageView.layer removeAllAnimations];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(startFlipAnimation) object:nil];
 }
 
 @end
