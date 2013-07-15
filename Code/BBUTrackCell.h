@@ -13,6 +13,7 @@
 -(UIImageView*)flipSideImageView;
 -(UIImageView*)imageView;
 -(void)startAnimating;
+-(void)stopAnimating;
 -(UILabel*)titleLabel;
 -(UIImageView*)zoomingImageView;
 

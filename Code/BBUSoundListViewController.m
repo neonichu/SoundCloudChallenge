@@ -19,6 +19,8 @@
 
 @property (getter = hasCancelled) BOOL cancelled;
 @property BBUTrackSearchDataSource* dataSource;
+@property id didBecomeActiveObserver;
+@property id didEnterBackgroundObserver;
 @property (readonly, getter = isLoggedIn) BOOL loggedIn;
 @property (readonly) NSString* loginButtonTitle;
 
@@ -30,6 +32,9 @@
 
 -(void)dealloc {
     [self.dataSource removeObserver:self forKeyPath:@"tracks" context:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self.didBecomeActiveObserver];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.didEnterBackgroundObserver];
 }
 
 -(id)init {
@@ -46,6 +51,20 @@
                                                                                  target:self
                                                                                  action:@selector(logInOrOut)];
         self.navigationItem.title = NSLocalizedString(@"Challenge", nil);
+        
+        NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+        self.didBecomeActiveObserver = [center addObserverForName:UIApplicationDidBecomeActiveNotification
+                                                           object:nil
+                                                            queue:[NSOperationQueue mainQueue]
+                                                       usingBlock:^(NSNotification *note) {
+                                                           [self startAnimating];
+                                                       }];
+        self.didEnterBackgroundObserver = [center addObserverForName:UIApplicationDidEnterBackgroundNotification
+                                                              object:nil
+                                                               queue:[NSOperationQueue mainQueue]
+                                                          usingBlock:^(NSNotification *note) {
+                                                              [self stopAnimating];
+                                                          }];
         
 #ifdef MAKE_DEFAULT_PNG
         self.navigationItem.rightBarButtonItem.enabled = NO;
@@ -78,6 +97,12 @@
 -(void)startAnimating {
     for (BBUTrackCell* cell in self.collectionView.visibleCells) {
         [cell startAnimating];
+    }
+}
+
+-(void)stopAnimating {
+    for (BBUTrackCell* cell in self.collectionView.visibleCells) {
+        [cell stopAnimating];
     }
 }
 
